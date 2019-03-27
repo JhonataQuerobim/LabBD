@@ -1,6 +1,6 @@
 banco(pk(nrobanco), cnpj, cep, estado, logradouro, nro, complemento)
 agencia(pk(fk_banco(nrobanco), nroagencia), cidade)
-conta(pk(fk_agencia(nrobanco, nroagencia), nroconta), gerente)
+conta(pk(fk_agencia(nrobanco, nroagencia), nroconta), gerente, saldo)
 cliente(pk(cpf), email, pnome, sobrenome)
 corrente(pk(fk_conta(nrobanco, nroagencia, nroconta)), limite)
 poupanca(pk(fk_conta(nrobanco, nroagencia, nroconta)), aniversario)
