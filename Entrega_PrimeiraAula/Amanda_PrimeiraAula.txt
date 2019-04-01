@@ -1,8 +1,9 @@
 banco(pk(nrobanco), cnpj, cep, estado, logradouro, nro, compl)
 agencia(pk(fk_banco(nrobanco), nroagencia), cidade)
-conta(pk(fk_agencia_banco(nroagencia, nrobanco), nroConta))
+conta(pk(fk_agencia_banco(nroagencia, nrobanco), nroConta), saldo)
 cliente(pk(cpf), email, pnome, sobrenome)
 movimentacao(pk(fk_cliente(cpf), datahora), valor, tipo)
-corrente(
-#possui deve vir mapeado e correntista também
-correntista conta corrente/correntista conta poupança + movimentação correntista/movimentaço conta poupança
+corrente(pk(fk_conta1(nroconta, nroagencia, nrobanco)), limite)
+poupanca(pk(pk_conta2(nroconta, nroagencia, nrobanco)), aniversario)
+correntista(pk(fk_cliente(cpf), fk_conta(nroconta, nroagencia, nrobanco)))
+possui(pk(fk_cliente(cpf), fk_conta(nroconta, nroagencia, nrobanco)), titular)
