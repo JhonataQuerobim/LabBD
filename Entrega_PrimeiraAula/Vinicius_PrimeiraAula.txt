@@ -1,0 +1,12 @@
+Banco(PK(nrobanco), cnpj, cep, estado, logradouro, nro, compl)
+Cliente(PK(cpf), pnome, sobrenome, email)
+
+Conta_Corrente(PK(FK_Conta(nrobanco, nroagencia)), limite)
+Conta_Poupança(PK(FK_Conta(nrobanco, nroagencia)), aniversário)
+
+Agência(PK(FK_Banco(nrobanco), nroagencia), cidade)
+Conta(PK(FK_Agencia(nrobanco, nroagencia), nroconta), saldo, gerente)
+Movimentação(PK(FK_Correntista(cpf, nrobanco, nroagencia, nroconta), datahora), valor, tipo)
+
+Cl_Possui_Ct(PK(FK_Cliente(cpf), FK_Conta(nrobanco, nroagencia, nroconta)), titular)
+Correntista(PK(FK_Cl_Possui_Ct(cpf, nrobanco, nroagencia, nroconta)))
