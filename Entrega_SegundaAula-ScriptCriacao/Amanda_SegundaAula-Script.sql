@@ -74,7 +74,7 @@ create TABLE movimentacao(
   nrobanco    Number(10),
   nroagencia  Number(10),
   nroconta    Number(10),
-  datahra     Varchar2(10),
+  datahora    Varchar2(10),
   valor       Varchar2(10)  constraint valor_movimentacao NOT NULL,
   tipo        Varchar2(10)  constraint tipo_movimentacao NOT NULL,
   constraint fk_movimentacao_cpf FOREIGN KEY (cpf) REFERENCES cliente(cpf),
