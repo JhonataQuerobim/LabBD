@@ -23,7 +23,7 @@ create TABLE conta(
   nroconta    Number(10),
   saldo       Number(10)  constraint saldo_conta NOT NULL,
   constraint fk_conta_nrobanco FOREIGN KEY (nrobanco) REFERENCES banco(nrobanco),
-  constraint fk_conta_nroagencia FOREIGN KEY (nroagencia) REFERENCES agencia(nroagencia),
+  constraint fk_conta_nroagencia FOREIGN KEY (nrobanco, nroagencia) REFERENCES agencia(nrobanco, nroagencia),
   constraint pk_conta PRIMARY KEY (nrobanco, nroagencia, nroconta)
 );
 
@@ -41,8 +41,8 @@ create TABLE corrente(
   nroconta    Number(10),
   limite      Number(10)  constraint limite_corrente NOT NULL,
   constraint fk_corrente_nrobanco FOREIGN KEY (nrobanco) REFERENCES banco(nrobanco),
-  constraint fk_corrente_nroagencia FOREIGN KEY (nroagencia) REFERENCES agencia(nroagencia),
-  constraint fk_corrente_nroconta FOREIGN KEY (nroconta) REFERENCES conta(nroconta),
+  constraint fk_corrente_nroagencia FOREIGN KEY (nrobanco, nroagencia) REFERENCES agencia(nrobanco, nroagencia),
+  constraint fk_corrente_nroconta FOREIGN KEY (brobanco, nroagencia, nroconta) REFERENCES conta(nrobanco, nroagencia, nroconta),
   constraint pk_corrente PRIMARY KEY (nrobanco, nroagencia, nroconta)
 );
 
@@ -52,8 +52,8 @@ create TABLE poupanca(
   nroconta      Number(10),
   aniversario   Number(10)  constraint limite_corrente NOT NULL,
   constraint fk_corrente_nrobanco FOREIGN KEY (nrobanco) REFERENCES banco(nrobanco),
-  constraint fk_corrente_nroagencia FOREIGN KEY (nroagencia) REFERENCES agencia(nroagencia),
-  constraint fk_corrente_nroconta FOREIGN KEY (nroconta) REFERENCES conta(nroconta),
+  constraint fk_corrente_nroagencia FOREIGN KEY (nrobanco, nroagencia) REFERENCES agencia(nrobanco, nroagencia),
+  constraint fk_corrente_nroconta FOREIGN KEY (nrobanco, nroagencia, nroconta) REFERENCES conta(nrobanco, nroagencia, nroconta),
   constraint pk_corrente PRIMARY KEY (nrobanco, nroagencia, nroconta)
 );
 
@@ -64,8 +64,8 @@ create TABLE correntista(
   nroconta   Number(10),
   constraint fk_correntista_cpf FOREIGN KEY (cpf) REFERENCES cliente(cpf),
   constraint fk_correntista_nrobanco FOREIGN KEY (nrobanco) REFERENCES banco(nrobanco),
-  constraint fk_correntista_nroagencia FOREIGN KEY (nroagencia) REFERENCES agencia(nroagencia),
-  constraint fk_correntista_nroconta FOREIGN KEY (nroconta) REFERENCES conta(nroconta),
+  constraint fk_correntista_nroagencia FOREIGN KEY (nrobanco, nroagencia) REFERENCES agencia(nrobanco, nroagencia),
+  constraint fk_correntista_nroconta FOREIGN KEY (nrobanco, nroagencia, nroconta) REFERENCES conta(nrobanco, nroagencia, nroconta),
   constraint pk_correntista PRIMARY KEY (cpf, nrobanco, nroagencia, nroconta)
 );
 
@@ -79,8 +79,8 @@ create TABLE movimentacao(
   tipo        Varchar2(10)  constraint tipo_movimentacao NOT NULL,
   constraint fk_movimentacao_cpf FOREIGN KEY (cpf) REFERENCES cliente(cpf),
   constraint fk_movimentacao_nrobanco FOREIGN KEY (nrobanco) REFERENCES banco(nrobanco),
-  constraint fk_movimentacao_nroagencia FOREIGN KEY (nroagencia) REFERENCES agencia(nroagencia),
-  constraint fk_movimentacao_nroconta FOREIGN KEY (nroconta) REFERENCES conta(nroconta),
+  constraint fk_movimentacao_nroagencia FOREIGN KEY (nrobanco, nroagencia) REFERENCES agencia(nrobanco, nroagencia),
+  constraint fk_movimentacao_nroconta FOREIGN KEY (nrobanco, nroagencia, nroconta) REFERENCES conta(nrobanco, nroagencia, nroconta),
   constraint pk_movimentacao PRIMARY KEY (cpf, nrobanco, nroagencia, nroconta, datahora)
 );
 
@@ -92,7 +92,7 @@ create TABLE possui(
   titular     Varchar2(50)  constraint titular_possui NOT NULL,
   constraint fk_possui_cpf FOREIGN KEY (cpf) REFERENCES cliente(cpf),
   constraint fk_possui_nrobanco FOREIGN KEY (nrobanco) REFERENCES banco(nrobanco),
-  constraint fk_possui_nroagencia FOREIGN KEY (nroagencia) REFERENCES agencia(nroagencia),
-  constraint fk_possui_nroconta FOREIGN KEY (nroconta) REFERENCES conta(nroconta),
+  constraint fk_possui_nroagencia FOREIGN KEY (nrobanco, nroagencia) REFERENCES agencia(nrobanco, nroagencia),
+  constraint fk_possui_nroconta FOREIGN KEY (nrobanco, nroagencia, nroconta) REFERENCES conta(nrobanco, nroagencia, nroconta),
   constraint pk_possui PRIMARY KEY (cpf, nrobanco, nroagencia, nroconta)
 );
