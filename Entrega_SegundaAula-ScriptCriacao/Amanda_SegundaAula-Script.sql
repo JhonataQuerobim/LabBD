@@ -1,3 +1,12 @@
+drop TABLE banco;
+drop TABLE agencia;
+drop TABLE conta;
+drop TABLE cliente;
+drop TABLE corrente;
+drop TABLE poupanca;
+drop TABLE correntista;
+drop TABLE movimentacao;
+
 create TABLE banco (
   nrobanco    Number(10),
   cnpj        Number(10)    constraint cnpj_banco NOT NULL,
@@ -42,7 +51,7 @@ create TABLE corrente(
   limite      Number(10)  constraint limite_corrente NOT NULL,
   constraint fk_corrente_nrobanco FOREIGN KEY (nrobanco) REFERENCES banco(nrobanco),
   constraint fk_corrente_nroagencia FOREIGN KEY (nrobanco, nroagencia) REFERENCES agencia(nrobanco, nroagencia),
-  constraint fk_corrente_nroconta FOREIGN KEY (brobanco, nroagencia, nroconta) REFERENCES conta(nrobanco, nroagencia, nroconta),
+  constraint fk_corrente_nroconta FOREIGN KEY (nrobanco, nroagencia, nroconta) REFERENCES conta(nrobanco, nroagencia, nroconta),
   constraint pk_corrente PRIMARY KEY (nrobanco, nroagencia, nroconta)
 );
 
