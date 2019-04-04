@@ -6,6 +6,7 @@ drop TABLE corrente;
 drop TABLE poupanca;
 drop TABLE correntista;
 drop TABLE movimentacao;
+drop TABLE possui;
 
 create TABLE banco (
   nrobanco    Number(10),
@@ -37,7 +38,7 @@ create TABLE conta(
 );
 
 create TABLE cliente(
-  cpf       Varchar2(10),
+  cpf       Number(10),
   email     Varchar2(100) constraint email_cliente NOT NULL,
   pnome     Varchar2(20)  constraint pnome_cliente NOT NULL,
   sobrenome Varchar2(50)  constraint sobrenome_cliente NOT NULL,
@@ -59,11 +60,11 @@ create TABLE poupanca(
   nrobanco      Number(10),
   nroagencia    Number(10),
   nroconta      Number(10),
-  aniversario   Number(10)  constraint limite_corrente NOT NULL,
-  constraint fk_corrente_nrobanco FOREIGN KEY (nrobanco) REFERENCES banco(nrobanco),
-  constraint fk_corrente_nroagencia FOREIGN KEY (nrobanco, nroagencia) REFERENCES agencia(nrobanco, nroagencia),
-  constraint fk_corrente_nroconta FOREIGN KEY (nrobanco, nroagencia, nroconta) REFERENCES conta(nrobanco, nroagencia, nroconta),
-  constraint pk_corrente PRIMARY KEY (nrobanco, nroagencia, nroconta)
+  aniversario   Number(10)  constraint aniversario_poupanca NOT NULL,
+  constraint fk_poupanca_nrobanco FOREIGN KEY (nrobanco) REFERENCES banco(nrobanco),
+  constraint fk_poupanca_nroagencia FOREIGN KEY (nrobanco, nroagencia) REFERENCES agencia(nrobanco, nroagencia),
+  constraint fk_poupanca_nroconta FOREIGN KEY (nrobanco, nroagencia, nroconta) REFERENCES conta(nrobanco, nroagencia, nroconta),
+  constraint pk_poupanca PRIMARY KEY (nrobanco, nroagencia, nroconta)
 );
 
 create TABLE correntista(
