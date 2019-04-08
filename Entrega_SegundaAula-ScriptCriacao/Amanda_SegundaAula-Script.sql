@@ -10,8 +10,8 @@ drop TABLE possui;
 
 create TABLE banco (
   nrobanco    Number(10),
-  cnpj        Number(10)    constraint cnpj_banco NOT NULL,
-  cep         Number(10)    constraint cep_banco NOT NULL,
+  cnpj        Varchar2(14)  constraint cnpj_banco NOT NULL,
+  cep         Varchar2(9)   constraint cep_banco NOT NULL,
   estado      Varchar2(2)   constraint estado_banco NOT NULL,
   logradouro  Varchar2(100) constraint logradouro_banco NOT NULL,
   nro         Number(5)     constraint nro_banco NOT NULL,  
@@ -38,7 +38,7 @@ create TABLE conta(
 );
 
 create TABLE cliente(
-  cpf       Number(10),
+  cpf       Varchar2(14),
   email     Varchar2(100) constraint email_cliente NOT NULL,
   pnome     Varchar2(20)  constraint pnome_cliente NOT NULL,
   sobrenome Varchar2(50)  constraint sobrenome_cliente NOT NULL,
@@ -68,7 +68,7 @@ create TABLE poupanca(
 );
 
 create TABLE correntista(
-  cpf        Number(10),
+  cpf        Varchar2(14),
   nrobanco   Number(10),
   nroagencia Number(10),
   nroconta   Number(10),
@@ -80,7 +80,7 @@ create TABLE correntista(
 );
 
 create TABLE movimentacao(
-  cpf         Number(10),
+  cpf         Varchar2(14),
   nrobanco    Number(10),
   nroagencia  Number(10),
   nroconta    Number(10),
@@ -95,7 +95,7 @@ create TABLE movimentacao(
 );
 
 create TABLE possui(
-  cpf         Number(10),
+  cpf         Varchar2(14),
   nrobanco    Number(10),
   nroagencia  Number(10),
   nroconta    Number(10),
