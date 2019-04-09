@@ -13,15 +13,16 @@
 -- Correntista(PK(FK_Cl_Possui_Ct(cpf, nrobanco, nroagencia, nroconta)))
 -- Movimentação(PK(FK_Correntista(cpf, nrobanco, nroagencia, nroconta), datahora), valor, tipo)
 
-DROP TABLE banco
-DROP TABLE cliente
-DROP TABLE agencia
-DROP TABLE conta
-DROP TABLE corrente
-DROP TABLE poupanca
-DROP TABLE cl_possui_ct
-DROP TABLE correntista
-DROP TABLE movimentacao
+
+DROP TABLE movimentacao;
+DROP TABLE correntista;
+DROP TABLE cl_possui_ct;
+DROP TABLE poupanca;
+DROP TABLE corrente;
+DROP TABLE conta;
+DROP TABLE agencia;
+DROP TABLE cliente;
+DROP TABLE banco;
 
 CREATE TABLE banco(
 	nrobanco	NUMBER(10),
@@ -33,7 +34,7 @@ CREATE TABLE banco(
 	compl		VARCHAR2(80),
 	
 	CONSTRAINT pk_banco PRIMARY KEY (nrobanco)
-)
+);
 
 CREATE TABLE cliente(
 	cpf			NUMBER(11),
@@ -42,7 +43,7 @@ CREATE TABLE cliente(
 	email		VARCHAR2(80)	CONSTRAINT email_cliente NOT NULL,
 	
 	CONSTRAINT pk_cliente PRIMARY KEY (cpf)
-)
+);
 
 CREATE TABLE agencia(
 	nrobanco	NUMBER(10),
@@ -51,18 +52,18 @@ CREATE TABLE agencia(
 	
 	CONSTRAINT fk_banco FOREIGN KEY (nrobanco) REFERENCES banco(nrobanco),
 	CONSTRAINT pk_agencia PRIMARY KEY (nrobanco, nroagencia)
-)
+);
 
 CREATE TABLE conta(
 	nrobanco	NUMBER(10),
 	nroagencia	NUMBER(10),
 	nroconta	NUMBER(10),
-	saldo		NUMBER(10),
+	saldo		NUMBER(10,2),
 	gerente		VARCHAR2(80)	CONSTRAINT gerente_conta NOT NULL,
 	
 	CONSTRAINT fk_agencia FOREIGN KEY (nrobanco, nroagencia) REFERENCES agencia(nrobanco, nroagencia),
 	CONSTRAINT pk_conta PRIMARY KEY (nrobanco, nroagencia, nroconta)
-)
+);
 
 CREATE TABLE corrente(
 	nrobanco	NUMBER(10),
@@ -72,7 +73,7 @@ CREATE TABLE corrente(
 	
 	CONSTRAINT fk_cc FOREIGN KEY (nrobanco, nroagencia, nroconta) REFERENCES conta(nrobanco, nroagencia, nroconta),
 	CONSTRAINT pk_corrente PRIMARY KEY (nrobanco, nroagencia, nroconta)
-)
+);
 
 CREATE TABLE poupanca(
 	nrobanco	NUMBER(10),
@@ -82,7 +83,7 @@ CREATE TABLE poupanca(
 	
 	CONSTRAINT fk_cp FOREIGN KEY (nrobanco, nroagencia, nroconta) REFERENCES conta(nrobanco, nroagencia, nroconta),
 	CONSTRAINT pk_poupanca PRIMARY KEY (nrobanco, nroagencia, nroconta)
-)
+);
 
 CREATE TABLE cl_possui_ct(
 	cpf			NUMBER(11),
@@ -94,7 +95,7 @@ CREATE TABLE cl_possui_ct(
 	CONSTRAINT fk_cl_possui FOREIGN KEY (cpf) REFERENCES cliente(cpf),
 	CONSTRAINT fk_possui_ct FOREIGN KEY (nrobanco, nroagencia, nroconta) REFERENCES conta(nrobanco, nroagencia, nroconta),
 	CONSTRAINT pk_cl_possui_ct PRIMARY KEY (cpf, nrobanco, nroagencia, nroconta)
-)
+);
 
 CREATE TABLE correntista(
 	cpf			NUMBER(11),
@@ -104,17 +105,17 @@ CREATE TABLE correntista(
 	
 	CONSTRAINT fk_cl_possui_ct FOREIGN KEY (cpf, nrobanco, nroagencia, nroconta) REFERENCES cl_possui_ct(cpf, nrobanco, nroagencia, nroconta),
 	CONSTRAINT pk_correntista PRIMARY KEY (cpf, nrobanco, nroagencia, nroconta)
-)
+);
 
 CREATE TABLE movimentacao(
 	cpf			NUMBER(11),
 	nrobanco	NUMBER(10),
 	nroagencia	NUMBER(10),
 	nroconta	NUMBER(10),
-	datahora	DATE,			-- O Oracle não reconheceu o uso de DATETIME
+	datahora	TIMESTAMP,		-- O Oracle não reconheceu o uso de DATETIME
 	valor		NUMBER(10)		CONSTRAINT valor_movimentacao NOT NULL,
 	tipo		VARCHAR2(20)	CONSTRAINT tipo_movimentacao NOT NULL,
 	
 	CONSTRAINT fk_correntista FOREIGN KEY (cpf, nrobanco, nroagencia, nroconta) REFERENCES correntista(cpf, nrobanco, nroagencia, nroconta),
 	CONSTRAINT pk_ PRIMARY KEY (cpf, nrobanco, nroagencia, nroconta, datahora)
-)
+);
