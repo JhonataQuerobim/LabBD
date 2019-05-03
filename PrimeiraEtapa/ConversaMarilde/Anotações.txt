@@ -1,0 +1,19 @@
+Atividade proposta - quando aprovada ganha coordenador (geralmente quem propôs vira o coordenador - coordenador pode mudar porém quem propõe não pode indicar outro coordenador inicialmente)
+	-Só tem coordenador quando está em execução, enquanto isso só tem proponente
+	-Mesma coisa com programa
+A diferença do programa é que o programa não é executado, ele tem uma série de atividades (programa é criado e depois uma atividade é associado a ele, atividades podem não está associadas a nenhum programa
+	-Coordenador de programa não precisa ter uma atividade em seu nome
+Estudantes são os "clientes" das atividades, não podem ser coordenadores
+Não exclui programas
+	-Podem ser encerrados
+	-Se encerrados, as atividades devem ser encerradas também
+Os coordenadores de programa devem aprovar ou não as atividades ligadas ao programa
+	-Há um trâmite para ser aprovado
+	-Eles podem definir alguns tipos de documentos visíveis ou não
+Há controle de horas na equipe dos executores
+	-Horas previstas e executadas
+	-DE: Dedicação exclusiva
+Idealmente uma atividade/projeto não pode ficar sem coordenadores
+Controle de quem era coordenador em um determinado período
+Os editais são responsabilidades do coordenador
+
