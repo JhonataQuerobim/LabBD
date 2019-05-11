@@ -1,0 +1,17 @@
+As informações sobre coordenador são: número SIAPE, CPF, nome completo, departamento, telefone (até 3), e-mail (até 3).
+O número SIAPE controla todos os servidores federais.
+Apenas coordenadores podem mudar suas informações. O mesmo vale para membro de equipe, participante, etc. 
+A atividade pode ter dados não-visíveis, mas é importante ficar atento a quais informações são exigidas transparência.
+Níveis de abstração:
+- Estudantes que são/não são membros de equipe;
+- Servidores técnicos que são/não são membros de equipe;
+- Coordenadores.
+
+A atividade pode ser interrompida desde que possua motivo justificado.
+Professor pode ser participante. Aliás, qualquer pessoa pode ser um participante, incluindo estrangeiros (necessário pedir número do passaporte).
+As informações sobre participantes: nome completo, CPF, e-mail.
+É importante ter que um espaço para anúncios dos ministrantes, de modo que os participantes possam ver.
+
+Alterações do programa/atividade: mostrar como estão sendo realizadas as alterações, armazenar todas as versões com as datas de OK para a nova versão. Exibir a versão vigente.
+É importante armazenar quem pode dar OK e quem de fato deu OK para a nova versão.
+A Caex e o Coex devem indicar quem são as pessoas que podem dar esse OK.
