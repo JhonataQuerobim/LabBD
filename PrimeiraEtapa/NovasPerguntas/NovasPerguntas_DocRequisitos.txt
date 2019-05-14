@@ -1,0 +1,17 @@
+Um Coordenador pode ser estrangeiro?
+
+As imagens disponibilizadas sobre as atividades englobam todas as informações necessárias? A barra de scroll inicia no meio da tela e ficamos em dúvida se no começo da página há informações relevantes.
+
+As imagens disponibilizadas parecem mostrar somente as informações sobre atividades. A estrutura de dados dos programas são as mesmas que atividades? Se não, quais são as informações importantes a serem armazenadas sobre programas?
+
+De que maneira podemos contabilizar as horas trabalhadas do coordenador, visto não ser necessário seu engajamento em uma atividade? Talvez contando as horas passadas em reuniões com membros da equipe?
+
+Uma atividade ou programa pode ter mais de um coordenador?
+
+Uma proposta de atividade ou programa pode ter mais de um proponente?
+
+Caso haja uma mudança de coordenador de um programa ou atividade, deve ser armazenado o motivo/justificativa da mudança ou afastamento?
+
+Programas ou atividades podem ser interrompidos (no sentido de retornarem ao funcionamento normal em algum momento posterior)? No caso da ausência de um coordenador (desligamento, afatasmento ou ausência temporária) a atividade ou programa deve ser interrompido/encerrado?
+
+Uma pessoa que deseja participar de uma atividade deve realizar uma solicitação ao coordenador? O sistema deve armazenar essas solicitações?
