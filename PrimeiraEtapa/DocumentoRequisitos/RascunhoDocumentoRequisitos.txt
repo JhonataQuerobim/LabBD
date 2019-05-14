@@ -1,0 +1,38 @@
+Rascunho do documento de requisitos feito na aula do dia 07/05:
+
+Requisitos funcionais:
+1. Guardar informações pessoais (CPF, Nome completo e até 3 e-mails) para todos os indivíduos - proponentes, participantes, membros da equipe e coordenador). Para o coordenador também será necessário armazenar o número SIAPE, departamento de origem e até 3 telefones.
+
+2. Guardar as informações sobre o programa (título, coordenador, status, data início, código).
+
+3. Guardar informações sobre atividades.
+
+4. Atividades/programas precisam ser diferenciados entre propostas e em execução.
+
+5. Transparência: programas e atividades devem ser sempre armazenados.
+
+6. Caso um programa seja cancelado, as suas atividades devem ser canceladas.
+
+7. Atividade não pode estar em programas diferentes.
+
+8. Armazenar horas previstas/trabalhadas.
+
+9. Idealmente, atividades/programas não podem ficar ser coordenador.
+
+10. Controlar os coordenadores de todos os períodos.
+
+11. Coordenadores aprovam ou não as atividades de seu programa.
+
+12. Coordenador pode não ter atividade ligada a ele.
+
+13. Programa pode ter zero atividade.
+
+14. Histórico de alteração de programas/atividades (armazenar infos).
+
+15. Atividades/programas podem sofrer interrupção desde que justificado.
+
+16. Apenas coordenadores modificam suas informações.
+
+17. Cada indivíduo pode modificar suas informações.
+
+18. Coordenador vincula os participantes às atividades/programas.
