@@ -1,0 +1,40 @@
+Não é possível identificar as cardinalidades:
+É necessário escrever no texto o que nos leve a entender sobre cardinalidade máxima e mínima
+
+Certifiquem-se que fizeram todas as perguntas para o usuário 
+É necessário que as perguntas sejam respondidas
+
+Não sabíamos que era necessário explicitar sobre quais usuários tem direito de leitura e escrita
+Colocamos sobre quais poderiam ser excluídas, quais melhorar?
+Quem aceita?
+Coex
+Proposta de coordenador/proponente
+Algumas perguntas não foram respondidas "coordenador"
+Como dividir uma pessoa? Não entendemos ao certo.
+Como melhorar a identificação de coordenador e proponente
+Por que o programa está representando como agregação -> EXPLICAR
+É necessário melhorar a explicação da agregação, não ficou claramente explicado
+
+ATIVIDADES 
+Não entendemos como seria a "melhor forma de representar os dados apresentados no requisito"
+Perguntas para o usuário sobre como representar dados
+"Existência de uma atividade depende da existência de um programa" RF6
+Como representar as horas previstas e as horas de fato trabalhadas
+Perguntar como representar!
+
+**********************************************************************************************************************************************
+Conversa com a Marilde:
+Não devemos nos preocupar com a proposta -> quando a proposta é aceita, aí sim temos um coordenador -> é a partir daqui que devemos nos preocupar.
+A Coex que vai aceitar alterações nos programas/atividades.
+
+É necessário deixar explícito que programas/atividades não devem ser deletados. Coordenador pode ser excluído? Cada "objeto" existente precisa ser especificado sobrea possibilidade de alterar, deletar etc.
+
+Temos que dizer o identificador, atributos que representam (sobre a Coex), temos que ter informações úteis ao usuário
+
+É necessário refletir as informações que falamos no documento de requisitos no esquema conceitual.
+
+Representação do histórico: é importante colocar período no relacionamento entre coordenador e atividade -> multivalorado
+
+metadado -> é possível dizer simplesmente: solicitação de alteração (não entendi)
+
+

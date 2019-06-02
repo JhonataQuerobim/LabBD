@@ -1,0 +1,24 @@
+Não precisa lidar com proponentes/propostas
+	Agregações "desnecessárias"
+
+Quem aceita = coex (entidade tem que ter atributos - pelo menos identificador)
+
+Tem que representar empresas que financiam atividades/programas (orgão de financeamento)
+
+Além de atividades/programas deve-se especificar se outras coisas podem ou não serem excluidas/modificadas (modificadas não tem tanta exigencia nesse trabalho - sobre exclusão: coordenadores, financeadores)...
+
+Pessoa -> Docente, servidor (servidor docente e servidor TA)
+
+É importante ter edital no projeto (principalmente financeadores. Não entendi direito como funciona, pedir para alguém explicar)
+
+Explicitar no documento de requisitos quando algo for "por um período"
+
+Relacionamento de pessoa do tipo trabalha e participa são válidos
+
+Atividade e programa pode ter diversos coordenadores (não ao mesmo tempo) e no relacionamento registra o período (M pra N)
+
+Atividade linkada com atividade para representar o armazenamento de versões (com data e metadados)
+
+Unificar Programa e atividade
+
+Para solicitar alterações -> relacionamento ternário: Coordenador, Coex e Atividade/programa
